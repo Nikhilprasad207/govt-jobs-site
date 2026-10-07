@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nikhilprasad207.github.io/govt-jobs-site/sitemap.xml
