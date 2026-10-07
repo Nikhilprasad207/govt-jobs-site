@@ -89,6 +89,8 @@ nav.catbar button.active{background:var(--gold); color:#2a1d00;}
 .badge.psc{background:var(--gold); color:#2a1d00;}
 .badge.defense{background:#5a1414;}
 .badge.teaching{background:#126b60;}
+.badge.police{background:#1a2a6b;}
+.badge.psu{background:#4a3410;}
 
 table.info{width:100%; border-collapse:collapse; font-size:.8rem; margin-top:8px;}
 table.info td{padding:6px 12px; border-top:1px solid var(--border); vertical-align:top;}
@@ -132,6 +134,8 @@ footer a{color:#ffd98a;}
     <button data-cat="psc">State PSC</button>
     <button data-cat="defense">Defense</button>
     <button data-cat="teaching">Teaching</button>
+    <button data-cat="police">Police</button>
+    <button data-cat="psu">PSU Jobs</button>
   </div>
 </nav>
 
@@ -166,6 +170,10 @@ const jobs = [
  {cat:"defense", org:"Indian Army", title:"Agniveer (Technical & General Duty) — CEE 2026", posts:"Not yet announced", qual:"10th / 12th Pass", loc:"All India", notif:"12 Jan 2026", last:"Applied 13 Feb – 1 Apr 2026", exam:"CEE held 1–16 Jun 2026", fee:"—", url:"https://joinindianarmy.nic.in"},
  {cat:"teaching", org:"Kendriya Vidyalaya Sangathan (KVS)", title:"KVS Teacher Recruitment — PRT / TGT / PGT 2025-26", posts:"7,624", qual:"Graduate / PG + B.Ed as applicable", loc:"All India", notif:"13 Nov 2025", last:"Applied 14 Nov – 4 Dec 2025", exam:"Tier 1 / Tier 2 / Skill Test (ongoing)", fee:"Check official notification", url:"https://kvsangathan.nic.in"},
  {cat:"teaching", org:"Central Board of Secondary Education (CBSE)", title:"CTET — September 2026 Cycle", posts:"—", qual:"Diploma/Degree in Education (per paper)", loc:"All India", notif:"11 May 2026", last:"Exam held 06 Sep 2026", exam:"Result expected Oct 2026", fee:"—", url:"https://ctet.nic.in"},
+ {cat:"police", org:"Madhya Pradesh Employees Selection Board (MPESB)", title:"MP Police Constable Recruitment 2026", posts:"7,500 (General Duty)", qual:"10th/12th Pass", loc:"Madhya Pradesh", notif:"10 Sep 2026", last:"Applications open 22 Sep – 06 Oct 2026", exam:"To be announced", fee:"Check official notification", url:"https://esb.mp.gov.in"},
+ {cat:"police", org:"UP Police Recruitment and Promotion Board (UPPRPB)", title:"UP Police Constable Recruitment 2026", posts:"32,679", qual:"12th Pass", loc:"Uttar Pradesh", notif:"30 Jan 2026", last:"Multi-stage selection ongoing", exam:"Written test / Physical test stages", fee:"Check official notification", url:"https://uppbpb.gov.in"},
+ {cat:"psu", org:"Hindustan Petroleum Corporation Limited (HPCL)", title:"HPCL Recruitment 2026 — Various Posts", posts:"116", qual:"As per post (Engineering/Diploma)", loc:"All India", notif:"Jun 2026", last:"Applications closed 20 Jul 2026", exam:"To be announced", fee:"Check official notification", url:"https://www.hindustanpetroleum.com"},
+ {cat:"psu", org:"Rail Vikas Nigam Limited (RVNL)", title:"RVNL DGM / PMG Recruitment 2026", posts:"362", qual:"Engineering Degree + experience", loc:"All India", notif:"Jun 2026", last:"Applications closed 10 Jul 2026", exam:"Interview-based", fee:"Check official notification", url:"https://rvnl.org"},
 ];
 
 const grid = document.getElementById('grid');
@@ -175,7 +183,7 @@ const tabs = document.getElementById('tabs');
 let activeCat = 'all';
 
 function badgeLabel(cat){
-  return {latest:'Latest Job', result:'Result', admit:'Admit Card', answer:'Answer Key', psc:'State PSC', defense:'Defense', teaching:'Teaching'}[cat];
+  return {latest:'Latest Job', result:'Result', admit:'Admit Card', answer:'Answer Key', psc:'State PSC', defense:'Defense', teaching:'Teaching', police:'Police', psu:'PSU Jobs'}[cat];
 }
 
 function render(){
@@ -235,6 +243,26 @@ themeBtn.addEventListener('click', ()=>{
 
 const tickerItems = jobs.slice(0,6).map(j => `<b>${j.title}</b> — ${j.last}`).join('&nbsp;&nbsp;★&nbsp;&nbsp;');
 document.getElementById('tickerText').innerHTML = tickerItems;
+
+// Structured data (schema.org JobPosting) for categories that represent open recruitment drives,
+// so eligible listings can be picked up by Google's dedicated job-search rich results.
+const jobPostingCats = ['latest','psc','defense','teaching','police','psu'];
+jobs.filter(j => jobPostingCats.includes(j.cat)).forEach(j => {
+  const schema = {
+    "@context": "https://schema.org/",
+    "@type": "JobPosting",
+    "title": j.title,
+    "description": `${j.title} by ${j.org}. Vacancies: ${j.posts}. Qualification: ${j.qual}. ${j.last}`,
+    "datePosted": "2026-10-07",
+    "hiringOrganization": {"@type":"Organization", "name": j.org},
+    "jobLocation": {"@type":"Place","address":{"@type":"PostalAddress","addressRegion": j.loc, "addressCountry":"IN"}},
+    "employmentType": "FULL_TIME"
+  };
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(schema);
+  document.head.appendChild(s);
+});
 
 render();
 </script>
