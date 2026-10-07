@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sarkari Rozgar Samachar — Government Jobs, Results, Admit Card</title>
+<style>
+:root{
+  --bg:#f1ede4; --card:#ffffff; --text:#1a1a1a; --muted:#5a5a5a;
+  --red:#a8001c; --red2:#7a0014; --blue:#0b4d8c; --gold:#c8961e;
+  --border:#ddd4c0;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15130f; --card:#211e18; --text:#eee9df; --muted:#a8a194;
+    --border:#3a352a;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15130f; --card:#211e18; --text:#eee9df; --muted:#a8a194;
+  --border:#3a352a;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+*{box-sizing:border-box;}
+body{margin:0; font-family:Arial,Helvetica,sans-serif; background:var(--bg); color:var(--text); min-height:100%;}
+a{color:var(--blue); text-decoration:none;}
+
+.topbar{background:var(--red2); color:#fff; font-size:.72rem; padding:4px 10px; text-align:center;
+  padding-top:calc(4px + env(safe-area-inset-top,0px));}
+
+header{background:linear-gradient(135deg,var(--red),var(--red2)); color:#fff; padding:14px 16px;
+  position:sticky; top:0; z-index:10; border-bottom:4px solid var(--gold);}
+header .top{display:flex; align-items:center; justify-content:space-between; gap:10px; max-width:1020px; margin:0 auto;}
+header h1{font-size:1.4rem; margin:0; letter-spacing:.2px; font-weight:800;}
+header .tag{font-size:.7rem; color:#ffe3c2; margin-top:2px;}
+.theme-btn{background:transparent; border:1px solid rgba(255,255,255,.5); color:#fff; border-radius:4px; padding:5px 10px; font-size:.75rem; cursor:pointer;}
+
+.ticker-wrap{background:var(--card); border-bottom:1px solid var(--border); overflow:hidden; white-space:nowrap;}
+.ticker{display:inline-block; padding:6px 0; animation:scroll 28s linear infinite; font-size:.78rem; color:var(--red);}
+.ticker b{color:var(--text);}
+@keyframes scroll{0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
+
+nav.catbar{background:var(--blue); overflow-x:auto; -webkit-overflow-scrolling:touch;}
+nav.catbar .inner{display:flex; gap:0; max-width:1020px; margin:0 auto;}
+nav.catbar button{
+  flex:none; background:transparent; border:none; border-right:1px solid rgba(255,255,255,.15);
+  color:#fff; padding:9px 14px; font-size:.78rem; font-weight:700; cursor:pointer; white-space:nowrap;
+}
+nav.catbar button.active{background:var(--gold); color:#2a1d00;}
+
+.wrap{max-width:1020px; margin:0 auto; padding:14px;}
+.search{display:flex; gap:8px; margin-bottom:12px;}
+.search input{flex:1; padding:9px 11px; border:1px solid var(--border); border-radius:4px; background:var(--card); color:var(--text); font-size:.9rem;}
+.count{font-size:.78rem; color:var(--muted); margin-bottom:8px; font-style:italic;}
+
+.grid{display:grid; gap:12px;}
+.card{background:var(--card); border:1px solid var(--border); border-radius:4px; overflow:hidden;}
+.card .titlebar{background:#f6ecd8; border-bottom:2px solid var(--gold); padding:8px 12px; display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap;}
+:root[data-theme="dark"] .card .titlebar, @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .card .titlebar{background:#2a2518;}}
+.card h3{margin:0; font-size:1rem; color:var(--red); font-weight:800;}
+.card .org{font-size:.76rem; color:var(--muted); padding:6px 12px 0;}
+.badge{display:inline-block; font-size:.62rem; font-weight:800; padding:2px 7px; border-radius:3px; text-transform:uppercase; letter-spacing:.3px; color:#fff;}
+.badge.latest{background:#1b7a3d;}
+.badge.result{background:var(--red);}
+.badge.admit{background:var(--blue);}
+.badge.answer{background:#7a4a9d;}
+.badge.psc{background:var(--gold); color:#2a1d00;}
+.badge.defense{background:#5a1414;}
+.badge.teaching{background:#126b60;}
+
+table.info{width:100%; border-collapse:collapse; font-size:.8rem; margin-top:8px;}
+table.info td{padding:6px 12px; border-top:1px solid var(--border); vertical-align:top;}
+table.info td.label{width:38%; color:var(--muted); font-weight:700;}
+table.info tr:first-child td{border-top:none;}
+
+.rowbtn{padding:10px 12px; display:flex; gap:8px; flex-wrap:wrap; border-top:1px solid var(--border);}
+.rowbtn a{font-size:.78rem; font-weight:700; color:#fff; background:var(--red); padding:7px 14px; border-radius:3px;}
+.rowbtn a:hover{background:var(--red2);}
+
+.empty{text-align:center; color:var(--muted); padding:40px 10px; font-size:.9rem;}
+footer{background:var(--red2); color:#f1e0c8; font-size:.72rem; padding:18px 16px 24px; text-align:center;
+  padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));}
+footer a{color:#ffd98a;}
+</style>
+</head>
+<body>
+<div class="topbar">🔔 Fastest Updates on Govt Jobs, Results & Admit Cards — Always Verify on the Official Website Before Applying</div>
+
+<header>
+  <div class="top">
+    <div>
+      <h1>🇮🇳 सरकारी रोज़गार समाचार</h1>
+      <div class="tag">Sarkari Naukri • Result • Admit Card • Answer Key — Data Verified 07 Oct 2026</div>
+    </div>
+    <button class="theme-btn" id="themeBtn">🌓 Theme</button>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker" id="tickerText">Loading…</div>
+</div>
+
+<nav class="catbar">
+  <div class="inner" id="tabs">
+    <button data-cat="all" class="active">All</button>
+    <button data-cat="latest">Latest Jobs</button>
+    <button data-cat="result">Results</button>
+    <button data-cat="admit">Admit Card</button>
+    <button data-cat="answer">Answer Key</button>
+    <button data-cat="psc">State PSC</button>
+    <button data-cat="defense">Defense</button>
+    <button data-cat="teaching">Teaching</button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="search">
+    <input id="searchBox" type="text" placeholder="Search post, department or state…">
+  </div>
+  <div class="count" id="count"></div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<footer>
+  Listings compiled from official notifications as of 07 Oct 2026 and may change — always confirm dates, vacancies and fees on the linked official website before applying.<br><br>
+  This site is an independent aggregator, not affiliated with the Government of India or any recruitment board.
+</footer>
+
+<script>
+const jobs = [
+ {cat:"latest", org:"Staff Selection Commission (SSC)", title:"SSC CHSL (10+2 Level) Recruitment 2026", posts:"2,536 (tentative)", qual:"12th Pass", loc:"All India", notif:"07 Oct 2026", last:"Notification just released", exam:"To be announced", fee:"Check official notification", url:"https://ssc.gov.in"},
+ {cat:"latest", org:"Railway Recruitment Board (RRB)", title:"RRB JE — Junior Engineer (CEN 04/2026)", posts:"3,993", qual:"Diploma / Engineering Degree", loc:"All India", notif:"13 Aug 2026", last:"Applications opened 14 Aug 2026", exam:"To be announced", fee:"Check official CEN", url:"https://www.rrbapply.gov.in"},
+ {cat:"latest", org:"Railway Recruitment Board (RRB)", title:"RRB NTPC Graduate Posts (CEN 06/2026)", posts:"3,477", qual:"Bachelor's Degree", loc:"All India", notif:"21 Sep 2026", last:"Applications open ~08 Oct 2026 (tentative)", exam:"To be announced", fee:"Check official CEN", url:"https://www.rrbapply.gov.in"},
+ {cat:"latest", org:"Institute of Banking Personnel Selection (IBPS)", title:"IBPS RRB PO & Clerk (Officers / Office Assistants) 2026", posts:"Not yet announced", qual:"Bachelor's Degree", loc:"All India", notif:"01 Sep 2026", last:"Detailed notification out", exam:"Prelims Nov–Dec 2026", fee:"Check official notification", url:"https://www.ibps.in"},
+ {cat:"latest", org:"Institute of Banking Personnel Selection (IBPS)", title:"IBPS Clerk — CRP CSA-XVI", posts:"Not yet announced", qual:"Bachelor's Degree", loc:"All India", notif:"27 Jul 2026", last:"Applications closed 21 Aug 2026", exam:"Prelims 10–11 Oct 2026", fee:"Applications closed", url:"https://www.ibps.in"},
+ {cat:"result", org:"Staff Selection Commission (SSC)", title:"SSC GD Constable Final Result 2025", posts:"50,047 selected", qual:"—", loc:"All India (CAPFs / Assam Rifles / NCB / SSF)", notif:"—", last:"Declared 15 Jan 2026 (4,932 F / 45,115 M)", exam:"—", fee:"—", url:"https://ssc.gov.in"},
+ {cat:"result", org:"Staff Selection Commission (SSC)", title:"SSC CHSL Tier-1 Result 2025", posts:"~37,520 qualified for Tier-2", qual:"—", loc:"All India", notif:"—", last:"Declared 27 Feb 2026 · Gen cut-off ≈144.26", exam:"—", fee:"—", url:"https://ssc.gov.in"},
+ {cat:"result", org:"Staff Selection Commission (SSC)", title:"SSC CHSL Final Result (FRTA) 2025", posts:"—", qual:"—", loc:"All India", notif:"—", last:"Declared 17 Aug 2026", exam:"—", fee:"—", url:"https://ssc.gov.in"},
+ {cat:"admit", org:"Institute of Banking Personnel Selection (IBPS)", title:"IBPS Clerk Prelims Admit Card 2026", posts:"—", qual:"—", loc:"All India", notif:"—", last:"Available for download now", exam:"Prelims 10–11 Oct 2026", fee:"—", url:"https://www.ibps.in"},
+ {cat:"answer", org:"Staff Selection Commission (SSC)", title:"SSC CGL Tier-2 Answer Key 2025-26", posts:"—", qual:"—", loc:"All India", notif:"—", last:"Released 30 Jan 2026 · Objections closed 03 Feb 2026", exam:"—", fee:"₹50 per question challenged", url:"https://ssc.gov.in"},
+ {cat:"psc", org:"Uttar Pradesh Public Service Commission (UPPSC)", title:"UPPSC PCS (Combined State/Upper Subordinate Services) 2026", posts:"Not yet announced", qual:"Bachelor's Degree", loc:"Uttar Pradesh", notif:"25 Jun 2026", last:"Applications closed 10 Aug 2026 (extended)", exam:"06 Dec 2026", fee:"Check official notification", url:"https://uppsc.up.nic.in"},
+ {cat:"psc", org:"Madhya Pradesh Public Service Commission (MPPSC)", title:"MPPSC State Service Examination 2026", posts:"155", qual:"Bachelor's Degree", loc:"Madhya Pradesh", notif:"Jan 2026", last:"Prelims held 26 Apr 2026", exam:"Completed (Prelims)", fee:"Check official notification", url:"https://mppsc.nic.in"},
+ {cat:"defense", org:"Indian Navy", title:"Agniveer (Apprentice) — 01/2027 & 02/2027 Batch", posts:"Not yet announced", qual:"Class 10 + AICTE 3-yr Diploma", loc:"All India", notif:"02 Jun 2026", last:"Applied 5–29 Jun 2026", exam:"INET 2/2026 Stage I: Aug 2026 · Stage II (01/2027 batch): Oct 2026", fee:"—", url:"https://www.joinindiannavy.gov.in"},
+ {cat:"defense", org:"Indian Army", title:"Agniveer (Technical & General Duty) — CEE 2026", posts:"Not yet announced", qual:"10th / 12th Pass", loc:"All India", notif:"12 Jan 2026", last:"Applied 13 Feb – 1 Apr 2026", exam:"CEE held 1–16 Jun 2026", fee:"—", url:"https://joinindianarmy.nic.in"},
+ {cat:"teaching", org:"Kendriya Vidyalaya Sangathan (KVS)", title:"KVS Teacher Recruitment — PRT / TGT / PGT 2025-26", posts:"7,624", qual:"Graduate / PG + B.Ed as applicable", loc:"All India", notif:"13 Nov 2025", last:"Applied 14 Nov – 4 Dec 2025", exam:"Tier 1 / Tier 2 / Skill Test (ongoing)", fee:"Check official notification", url:"https://kvsangathan.nic.in"},
+ {cat:"teaching", org:"Central Board of Secondary Education (CBSE)", title:"CTET — September 2026 Cycle", posts:"—", qual:"Diploma/Degree in Education (per paper)", loc:"All India", notif:"11 May 2026", last:"Exam held 06 Sep 2026", exam:"Result expected Oct 2026", fee:"—", url:"https://ctet.nic.in"},
+];
+
+const grid = document.getElementById('grid');
+const countEl = document.getElementById('count');
+const searchBox = document.getElementById('searchBox');
+const tabs = document.getElementById('tabs');
+let activeCat = 'all';
+
+function badgeLabel(cat){
+  return {latest:'Latest Job', result:'Result', admit:'Admit Card', answer:'Answer Key', psc:'State PSC', defense:'Defense', teaching:'Teaching'}[cat];
+}
+
+function render(){
+  const q = searchBox.value.trim().toLowerCase();
+  const filtered = jobs.filter(j=>{
+    const matchesCat = activeCat === 'all' || j.cat === activeCat;
+    const matchesQ = !q || (j.title.toLowerCase().includes(q) || j.org.toLowerCase().includes(q) || j.loc.toLowerCase().includes(q));
+    return matchesCat && matchesQ;
+  });
+
+  countEl.textContent = filtered.length + (filtered.length===1 ? ' listing found' : ' listings found');
+
+  if(filtered.length === 0){
+    grid.innerHTML = '<div class="empty">No listings match your search. Try a different keyword.</div>';
+    return;
+  }
+
+  grid.innerHTML = filtered.map(j => `
+    <div class="card">
+      <div class="titlebar">
+        <h3>${j.title}</h3>
+        <span class="badge ${j.cat}">${badgeLabel(j.cat)}</span>
+      </div>
+      <div class="org">${j.org} &nbsp;|&nbsp; ${j.loc}</div>
+      <table class="info">
+        <tr><td class="label">Vacancy</td><td>${j.posts}</td></tr>
+        <tr><td class="label">Qualification</td><td>${j.qual}</td></tr>
+        <tr><td class="label">Notification Date</td><td>${j.notif}</td></tr>
+        <tr><td class="label">Important Dates</td><td>${j.last}</td></tr>
+        <tr><td class="label">Exam / Stage</td><td>${j.exam}</td></tr>
+        <tr><td class="label">Application Fee</td><td>${j.fee}</td></tr>
+      </table>
+      <div class="rowbtn">
+        <a href="${j.url}" target="_blank" rel="noopener">Official Website ↗</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+tabs.addEventListener('click', e=>{
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  tabs.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  activeCat = btn.dataset.cat;
+  render();
+});
+
+searchBox.addEventListener('input', render);
+
+const themeBtn = document.getElementById('themeBtn');
+themeBtn.addEventListener('click', ()=>{
+  const root = document.documentElement;
+  const cur = root.getAttribute('data-theme');
+  root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+});
+
+const tickerItems = jobs.slice(0,6).map(j => `<b>${j.title}</b> — ${j.last}`).join('&nbsp;&nbsp;★&nbsp;&nbsp;');
+document.getElementById('tickerText').innerHTML = tickerItems;
+
+render();
+</script>
+</body>
+</html>
